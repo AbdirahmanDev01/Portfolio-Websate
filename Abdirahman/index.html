@@ -16,16 +16,56 @@
           <img src="./images/logo-01.png" alt="Abdirahman Hussein Logo" class="w-15 h-15 object-contain scale-150" />
         </a>
 
-        <ul class="flex items-center gap-8 text-sm md:text-base">
+        <ul class="hidden md:flex items-center gap-8 text-sm md:text-base">
           <li><a href="#home" class="hover:text-[#13C8E8] transition duration-300">Home</a></li>
           <li><a href="#about" class="hover:text-[#13C8E8] transition duration-300">About</a></li>
           <li><a href="#projects" class="hover:text-[#13C8E8] transition duration-300">Projects</a></li>
           <li><a href="#contact" class="hover:text-[#13C8E8] transition duration-300">Contact</a></li>
         </ul>
 
-        <a href="#contact" class="bg-[#13C8E8] text-[#020B1E] px-5 py-2 rounded-md hover:bg-white transition duration-300 text-sm md:text-base font-semibold bottom-sm md:bottom-0 lg-bottom-0">
+        <a href="#contact" class="hidden md:inline-flex bg-[#13C8E8] text-[#020B1E] px-5 py-2 rounded-md hover:bg-white transition duration-300 text-sm md:text-base font-semibold">
           Let’s Talk
         </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          id="menuButton"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          class="md:hidden w-10 h-10 flex items-center justify-center
+                 rounded-lg border border-[#17233B] text-2xl
+                 hover:border-[#13C8E8] hover:text-[#13C8E8]
+                 transition duration-300"
+        >
+          <span id="menuIcon" aria-hidden="true">☰</span>
+          <span id="closeIcon" class="hidden" aria-hidden="true">✕</span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t border-[#17233B]
+               bg-[#020817] px-6 py-5"
+      >
+        <ul class="flex flex-col gap-4 text-center">
+          <li><a href="#home" class="mobileLink block py-2 hover:text-[#13C8E8] transition">Home</a></li>
+          <li><a href="#about" class="mobileLink block py-2 hover:text-[#13C8E8] transition">About</a></li>
+          <li><a href="#projects" class="mobileLink block py-2 hover:text-[#13C8E8] transition">Projects</a></li>
+          <li><a href="#contact" class="mobileLink block py-2 hover:text-[#13C8E8] transition">Contact</a></li>
+          <li>
+            <a
+              href="#contact"
+              class="mobileLink block bg-[#13C8E8] text-[#020B1E]
+                     px-5 py-3 rounded-lg font-semibold hover:bg-white
+                     transition duration-300"
+            >
+              Let’s Talk
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
@@ -449,7 +489,7 @@
 
     <!-- Contact Form -->
     <form
-    
+      id="contactForm"
       class="w-full max-w-2xl min-w-0 mx-auto lg:ml-auto lg:mr-0 rounded-2xl
              border border-[#17233B]
              bg-[#071225]
@@ -570,6 +610,7 @@
 
       <!-- Send Button -->
       <button
+        id="submit"
         type="submit"
         class="group mt-6 w-full
                inline-flex items-center justify-center gap-3
@@ -583,7 +624,7 @@
                focus:ring-offset-2 focus:ring-offset-[#071225]
                transition duration-300"
       >
-        Send Message
+        Send via WhatsApp
 
         <span
           aria-hidden="true"
@@ -593,6 +634,13 @@
           →
         </span>
       </button>
+
+      <p
+        id="formStatus"
+        class="hidden mt-4 rounded-lg px-4 py-3 text-sm text-center"
+        role="status"
+        aria-live="polite"
+      ></p>
     </form>
   </div>
 </section>
@@ -618,7 +666,7 @@
   </div>
 </footer>
 
+ <script src="./main.js"></script>
 
-    
   </body>
 </html>
